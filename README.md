@@ -7,23 +7,11 @@ crud using typescript and bootstrap
 
 
 ~~~mermaid
-stateDiagram-v2
-    state Platzi-courses {
-        state School {
-            [*] --> Course 
-            state Course {
-                [*] --> exam : (folder)
-                [*] --> exercise: (folder)
-                exercise --> scripts
-                [*] --> imgs: (folder)
-                [*] --> shared: (folder)
-                shared --> slides: (presentation file)
-                [*] --> README:(summary file)
-            }
-        }
-        [*] --> Certificates
-        state Certificates{
-            [*] --> certificate: (file)
-        }
-    } 
+flowchart TD
+    A[Start] --> B{Is it?}
+    B -- Yes --> C[OK]
+    C --> D[Rethink]
+    D --> B
+    B -- No ----> E[End]
 ~~~
+
