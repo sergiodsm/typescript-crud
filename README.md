@@ -3,8 +3,7 @@ crud using typescript and bootstrap
 
 
 
-## test
-
+## mermaid
 
 ~~~mermaid
 flowchart TD
@@ -15,3 +14,4 @@ flowchart TD
     B -- No ----> E[End]
 ~~~
 
+- doc: [http://mermaid.js.org/syntax/flowchart.html]
