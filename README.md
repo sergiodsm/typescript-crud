@@ -16,22 +16,14 @@ flowchart TD
 
 - doc: [http://mermaid.js.org/syntax/flowchart.html]
 - [https://www.mermaidflow.app/]
-
+- [**COOL**] [https://mermaid.live/]
 
 - another:
 
 ~~~mermaid
 erDiagram
-    // Define entities
-    User as "User"
-    Department as "Department"
-    Product as "Product"
-    SaleOrder as "SaleOrder"
-    Inventory as "Inventory"
-
-    // Define entity attributes
     User {
-        +UserID (PK)
+        UserID
         UserName
         Password
         FirstName
@@ -39,34 +31,28 @@ erDiagram
         Email
         Role
     }
-
     Department {
-        +DeptID (PK)
+        DeptID
         DepartmentName
         Location
     }
-
     Product {
-        +ProductID (PK)
+        ProductID
         ProductName
         Description
         UnitPrice
     }
-
     SaleOrder {
-        +OrderID (PK)
+        OrderID
         OrderDate
         CustomerName
         TotalAmount
     }
-
     Inventory {
-        +InventoryID (PK)
-        ProductID (FK)
+        InventoryID
+        ProductID
         QuantityInStock
     }
-
-    // Define relationships
     User --|{ Belongs to }|-- Department : WorksIn
     User --|{ Created by }|-- SaleOrder : Created
     SaleOrder --|{ Contains }|-- Product : Includes
@@ -107,11 +93,18 @@ erDiagram
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ~~~
 
-```mermaid
+~~~mermaid
 erDiagram
     vendor {
+        type field
         string Name
         string Contact_Information
+    }
+    transaction {
+        transactionID PK
+        string Type
+        datetime Date
+        int Quantity
     }
     org ||--o{ user : "Many-to-One"
     org ||--o{ dept : "Many-to-One"
@@ -127,5 +120,5 @@ erDiagram
     vendor ||--o{ transaction : "Many-to-One"
     customer ||--o{ transaction : "Many-to-One"
     user ||--o{ transaction : "Many-to-One"
-```
+~~~
 
