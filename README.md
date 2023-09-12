@@ -95,20 +95,96 @@ erDiagram
 
 ~~~mermaid
 erDiagram
+    org {
+        Org_ID PrimKey
+        Name string
+        Address string
+        Phone string
+        Email string
+    }
+    user {
+        UserID int
+        FirstName string
+        LastName string
+        Username string
+        Password string
+        Email string
+        Role string
+    }
+    dept {
+        Dept_ID PrimKey
+        Name asd
+        Description asd
+        Location asd
+    }
+    empl {
+        Emp_ID PrimKey
+        First Name
+        Last Name
+        Dateof Birth
+        Contact Information
+    }
+    product {
+        Product_ID PrimKey
+        Name string
+        Description string
+        SKU string
+        Price string
+        Quantity string
+    }
     vendor {
-        type field
-        string Name
-        string Contact_Information
+        Vendor_ID PrimKey
+        Name string
+        Contact Information
+    }
+    po {
+        PO_ID PrimKey
+        Date Date
+        Total Amount
+        Status string
+    }
+    po_item {
+        Line_Item_ID PrimKey
+        Quantity int
+        Unit Price
+        Total Price
+    }
+    customer {
+        Customer_ID PrimKey
+        Name string
+        Contact Information
+        Billing Address
+        Shipping Address
+    }
+    so {
+        SO_ID PrimKey
+        Date Date
+        Total Amount
+        Status string
+    }
+    so_item {
+        Line_Item_ID PrimKey
+        Quantity int
+        Unit Price
+        Total Price
+    }
+    inventory {
+        Inventory_ID PrimKey
+        Quantity int
+        Location geo
+        LastUpdated Date
     }
     transaction {
-        transactionID PK
-        string Type
-        datetime Date
-        int Quantity
+        Transaction_ID PrimKey
+        Type string
+        Date date
+        Quantity int
     }
+
+
     org ||--o{ user : "Many-to-One"
     org ||--o{ dept : "Many-to-One"
-    dept ||--o{ emp : "Many-to-One"
+    dept ||--o{ empl : "Many-to-One"
     vendor ||--o{ po : "Many-to-One"
     po ||--o{ po_item : "One-to-Many"
     product ||--o{ po_item : "Many-to-One"
