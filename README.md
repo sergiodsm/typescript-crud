@@ -19,6 +19,7 @@ flowchart TD
 
 - another:
 
+
 erDiagram
     // Define entities
     User as "User"
@@ -69,3 +70,26 @@ erDiagram
     User --|{ Created by }|-- SaleOrder : Created
     SaleOrder --|{ Contains }|-- Product : Includes
     Product --|{ Managed by }|-- Inventory : ManagedBy
+
+
+## another
+
+~~~mermaid
+mindmap
+  root((Products))
+    Origins
+      Food
+      ::icon(fa fa-book)
+      Clothes
+        Products
+    Logistic
+      On effectiveness<br/>and features
+      On Automatic creation
+        Uses
+            Warehouse 1
+            Point of Sale
+            Human Capital
+    Tools
+      Workforce and machines
+      Other Tools
+~~~
