@@ -17,46 +17,47 @@ flowchart TD
 - doc: [http://mermaid.js.org/syntax/flowchart.html]
 - [https://www.mermaidflow.app/]
 - [**COOL**] [https://mermaid.live/]
+- erDiagrams [https://newdevsguide.com/2023/04/08/creating-erds-with-mermaid/]
 
 - another:
 
 ~~~mermaid
 erDiagram
     User {
-        UserID
-        UserName
-        Password
-        FirstName
-        LastName
-        Email
-        Role
+        Userid int
+        UserName string
+        Password string
+        FirstName string
+        LastName string
+        Email string
+        Role string
     }
     Department {
-        DeptID
-        DepartmentName
-        Location
+        Deptid string
+        DepartmentName string
+        Location string
     }
     Product {
-        ProductID
-        ProductName
-        Description
-        UnitPrice
+        Productid int
+        ProductName string
+        Description string
+        UnitPrice string
     }
     SaleOrder {
-        OrderID
-        OrderDate
-        CustomerName
-        TotalAmount
+        Orderid string
+        OrderDate string
+        CustomerName string
+        TotalAmount string
     }
     Inventory {
-        InventoryID
-        ProductID
-        QuantityInStock
+        Inventoryid string
+        Productid string
+        QuantityInStock string
     }
-    User --|{ Belongs to }|-- Department : WorksIn
-    User --|{ Created by }|-- SaleOrder : Created
-    SaleOrder --|{ Contains }|-- Product : Includes
-    Product --|{ Managed by }|-- Inventory : ManagedBy
+    User ||-- |{ Department : WorksIn-BelongsTo
+    User ||--|{ SaleOrder : CreatedBy
+    SaleOrder }|--|{ Product : IncludesContains
+    Product }|--|{ Inventory : ManagedBy
 ~~~
 
 ## another
