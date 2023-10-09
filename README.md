@@ -200,7 +200,7 @@ erDiagram
 ~~~
 
 ~~~mermaid
-graph TD
+flowchart TD
     subgraph ComponentDataFlow
         odx2[ChildComponent]-- Data<br>@Output() --> odx1
         odx1[ParentComponent]-- Data<br>@Input() --> odx2
