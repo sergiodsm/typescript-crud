@@ -199,11 +199,11 @@ erDiagram
     user ||--o{ transaction : "Many-to-One"
 ~~~
 
+- another
+
 ~~~mermaid
 flowchart TD
-    subgraph ComponentDataFlow
-        odx2[ChildComponent]-- Data<br>@Output() --> odx1
-        odx1[ParentComponent]-- Data<br>@Input() --> odx2
-    end
+    odx2[ChildComponent]-- Data<br>@Output() --> odx1
+    odx1[ParentComponent]-- Data<br>@Input() --> odx2
 ~~~
 
