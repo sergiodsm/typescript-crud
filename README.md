@@ -202,8 +202,8 @@ erDiagram
 - another
 
 ~~~mermaid
-flowchart TD
-    odx2[ChildComponent]-- Data<br>@Output() --> odx1
-    odx1[ParentComponent]-- Data<br>@Input() --> odx2
+graph TD
+    odx2[ChildComponent]-- "Data<br>@Output()" --> odx1
+    odx1[ParentComponent]-- "Data<br>@Input()" --> odx2
 ~~~
 
